@@ -127,6 +127,22 @@
 
 // BEGIN vilemk custom - generated, edits here are overwritten
 / {
+    behaviors {
+        ht_bkspcshift: ht_bkspcshift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        ht_enterdqt: ht_enterdqt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
     combos {
         compatible = "zmk,combos";
         combo_bang {
