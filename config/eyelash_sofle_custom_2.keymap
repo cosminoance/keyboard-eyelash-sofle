@@ -107,19 +107,19 @@
     
         layer_3 {
             bindings = <
-                &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans &kp CARET &kp AMPS &kp STAR &trans &trans &trans
-                &trans    &trans   &trans    &kp DLLR  &kp LBRC &kp RBRC
+                &kp MINUS &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &trans &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+                &trans    &kp EXCL  &kp AT    &kp LBKT  &kp RBKT &kp LS(SQT)
                 &trans
-                &kp CARET &kp PIPE &kp BSLH  &trans    &trans   &trans
-                &trans    &trans   &kp MINUS &kp GT    &kp LPAR &kp RPAR
+                &kp END   &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp STAR &kp F12
+                &kp GRAVE &kp HASH  &kp DLLR  &kp LPAR  &kp RPAR &kp CARET
                 &trans
-                &kp LEFT  &kp DOWN &kp UP    &kp RIGHT &trans   &trans
-                &trans    &trans   &trans    &trans    &kp LBKT &kp RBKT
+                &kp HOME  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp PLUS &kp EQUAL
+                &kp TILDE &kp BSLH  &kp PIPE  &kp LBRC  &kp RBRC &kp PRCNT
                 &trans
-                &kp MINUS &kp EQUAL &kp PLUS &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans
+                &kp FSLH &kp KP_N1 &kp KP_N2 &kp KP_N3 &trans &trans &trans
+                &trans &trans &trans &trans  &trans
                 &trans
-                &trans &trans &trans &trans &trans
+                &kp GT &kp LT &trans &kp DOT &kp KP_N0
             >;
         };
 };
@@ -143,6 +143,11 @@
             key-positions = <29 30>;
             bindings = <&kp EXCL>;
         };
+        combo_bslash {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp BSLH>;
+        };
         combo_jk_quote {
             timeout-ms = <50>;
             key-positions = <34 35>;
@@ -153,6 +158,11 @@
             timeout-ms = <50>;
             key-positions = <28 29>;
             bindings = <&kp QMARK>;
+        };
+        combo_underscore {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp PIPE>;
         };
     };
 };
