@@ -60,12 +60,12 @@
                 &kp ESC   &kp A &kp S &kp D &kp F    &kp G
                 &kp LEFT_ARROW
                 &kp H     &kp J &kp K &kp L &kp SEMI &ht_enterdqt DQT RET
-                &kp LCTRL &kp Z &kp X &kp C &kp V    &kp B
+                &kp LSHFT &kp Z &kp X &kp C &kp V    &kp B
                 &kp RIGHT_ARROW
                 &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RCTRL &kp C_MUTE
-                &kp LALT                  &kp LSHFT &kp LGUI  &mo 3           &kp SPACE
+                &kp LCTRL &kp LALT  &kp LGUI  &mo 3           &kp SPACE
                 &kp ENTER
-                &ht_bkspcshift LSHFT BSPC &kp RSHFT &lt 3 RET &kp RIGHT_SHIFT &kp DELETE
+                &kp BSPC  &kp RSHFT &lt 3 RET &kp RIGHT_SHIFT &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -128,13 +128,6 @@
 // BEGIN vilemk custom - generated, edits here are overwritten
 / {
     behaviors {
-        ht_bkspcshift: ht_bkspcshift {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
         ht_enterdqt: ht_enterdqt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
