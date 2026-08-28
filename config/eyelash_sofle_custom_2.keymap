@@ -111,7 +111,7 @@
                 &kp UNDER &kp EXCL  &kp AT    &kp LBKT  &kp RBKT &kp LS(SQT)
                 &trans
                 &kp AMPS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp STAR &kp F12
-                &kp GRAVE &kp HASH  &kp DLLR  &kp LPAR  &kp RPAR &kp N6
+                &kp GRAVE &kp HASH  &kp DLLR  &kp LPAR  &kp RPAR &kp CARET
                 &trans
                 &kp DLLR  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp PLUS &kp EQUAL
                 &kp TILDE &kp BSLH  &kp PIPE  &kp LBRC  &kp RBRC &kp PRCNT
@@ -134,26 +134,31 @@
             key-positions = <29 30>;
             bindings = <&kp EXCL>;
         };
-        combo_bslash {
-            timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&kp BSLH>;
-        };
-        combo_jk_quote {
+        combo_jk_squote {
             timeout-ms = <50>;
             key-positions = <34 35>;
             bindings = <&kp SQT>;
             layers = <0>;
+        };
+        combo_pipe {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp PIPE>;
         };
         combo_question {
             timeout-ms = <50>;
             key-positions = <28 29>;
             bindings = <&kp QMARK>;
         };
+        combo_slash {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp FSLH>;
+        };
         combo_underscore {
             timeout-ms = <50>;
             key-positions = <21 22>;
-            bindings = <&kp PIPE>;
+            bindings = <&kp UNDER>;
         };
     };
 };
