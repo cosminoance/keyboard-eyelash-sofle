@@ -54,18 +54,18 @@
         layer0 {
             bindings = <
                 &kp MINUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp UP_ARROW &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp EQUAL
-                &lt 1 TAB &kp Q &kp W &kp E &kp R    &kp T
+                &lt 1 TAB              &kp Q &kp W &kp E &kp R    &kp T
                 &kp DOWN_ARROW
-                &kp Y     &kp U &kp I &kp O &kp P    &kp BSPC
-                &kp ESC   &kp A &kp S &kp D &kp F    &kp G
+                &kp Y                  &kp U &kp I &kp O &kp P    &lt 2 BSPC
+                &ht_esc_ctrl LCTRL ESC &kp A &kp S &kp D &kp F    &kp G
                 &kp LEFT_ARROW
-                &kp H     &kp J &kp K &kp L &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V    &kp B
+                &kp H                  &kp J &kp K &kp L &kp SEMI &kp SQT
+                &kp LCTRL              &kp Z &kp X &kp C &kp V    &kp B
                 &kp RIGHT_ARROW
                 &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp END &kp C_MUTE
-                &kp LCTRL &kp LALT  &kp LGUI &mo 3    &kp SPACE
+                &kp LSHFT &kp LALT  &none   &kp LGUI &lt 3 SPACE
                 &kp ENTER
-                &kp BSPC  &kp RSHFT &kp RET  &kp HOME &lt 2 DELETE
+                &kp BSPC  &kp RSHFT &kp RET &kp HOME &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -107,19 +107,19 @@
     
         layer_3 {
             bindings = <
-                &kp MINUS &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &trans &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-                &kp UNDER &kp EXCL  &kp AT    &kp LBKT  &kp RBKT &kp LS(SQT)
+                &kp PG_UP &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &trans &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+                &kp PG_DN              &kp QMARK &kp LBRC  &kp LBKT  &kp LPAR  &kp PRCNT
                 &trans
-                &kp AMPS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp STAR &kp F12
-                &kp GRAVE &kp HASH  &kp DLLR  &kp LPAR  &kp RPAR &kp CARET
+                &none                  &kp RPAR  &kp RBKT  &kp RBRC  &kp AT    &kp F12
+                &ht_esc_ctrl LCTRL ESC &kp CARET &kp UNDER &kp MINUS &kp COLON &kp EXCL
                 &trans
-                &kp DLLR  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp PLUS &kp EQUAL
-                &kp TILDE &kp BSLH  &kp PIPE  &kp LBRC  &kp RBRC &kp PRCNT
+                &kp SQT                &kp DQT   &kp EQUAL &kp PLUS  &kp DLLR  &kp GRAVE
+                &kp HOME               &none     &kp BSLH  &kp PIPE  &kp STAR  &kp N0
                 &trans
-                &kp FSLH &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp MINUS &trans &trans
+                &none &kp HASH &kp AMPS &kp FSLH &kp TILDE &kp END &trans
                 &trans &trans &trans     &trans  &trans
                 &trans
-                &kp GT &kp LT &kp KP_NUM &kp DOT &kp KP_N0
+                &kp GT &kp LT &kp KP_NUM &kp DOT &trans
             >;
         };
 };
@@ -127,38 +127,22 @@
 
 // BEGIN vilemk custom - generated, edits here are overwritten
 / {
+    behaviors {
+        ht_esc_ctrl: ht_esc_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
     combos {
         compatible = "zmk,combos";
-        combo_bang {
-            timeout-ms = <50>;
-            key-positions = <29 30>;
-            bindings = <&kp EXCL>;
-        };
         combo_jk_squote {
             timeout-ms = <50>;
             key-positions = <34 35>;
             bindings = <&kp SQT>;
             layers = <0>;
-        };
-        combo_pipe {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp PIPE>;
-        };
-        combo_question {
-            timeout-ms = <50>;
-            key-positions = <28 29>;
-            bindings = <&kp QMARK>;
-        };
-        combo_slash {
-            timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&kp FSLH>;
-        };
-        combo_underscore {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp UNDER>;
         };
     };
 };
