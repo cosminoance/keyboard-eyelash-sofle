@@ -1,7 +1,9 @@
-<img width="860" height="306" alt="image" src="https://github.com/user-attachments/assets/01e219ec-225d-4134-814a-e4f851cb2bb0" />
+<img width="1089" height="391" alt="image" src="https://github.com/user-attachments/assets/896982ff-beb8-4619-b22e-d25454913731" />
+
 ## Layer 3
 
 This is the one I chose to add instead of modifying 1, which had the mouse movement and 2, which had the bluetooth functions.
 
 
-<img width="856" height="348" alt="image" src="https://github.com/user-attachments/assets/af4ff61a-5e0e-46a3-873a-e499387e0b1d" />
+<img width="1090" height="394" alt="image" src="https://github.com/user-attachments/assets/c19c725b-9967-4693-a439-7e0cd274cc9d" />
+
