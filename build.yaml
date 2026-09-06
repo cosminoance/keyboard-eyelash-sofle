@@ -20,6 +20,6 @@
 ---
 include:
   - board: eyelash_sofle_left
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_2.keymap"
+    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap"
   - board: eyelash_sofle_right
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_2.keymap"
+    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap"
