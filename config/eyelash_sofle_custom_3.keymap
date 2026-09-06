@@ -60,12 +60,12 @@
                 &ht_esc_ctrl LCTRL ESC &kp A &kp S &kp D &kp F    &kp G
                 &kp LEFT_ARROW
                 &kp H                  &kp J &kp K &kp L &kp SEMI &kp SQT
-                &kp LCTRL              &kp Z &kp X &kp C &kp V    &kp B
+                &kp LSHFT              &kp Z &kp X &kp C &kp V    &kp B
                 &kp RIGHT_ARROW
                 &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp END &kp C_MUTE
-                &kp LSHFT &kp LALT  &none   &kp LGUI &lt 3 SPACE
+                &kp LCTRL  &kp K_APP &kp LALT &kp LGUI &kp SPACE
                 &kp ENTER
-                &kp BSPC  &kp RSHFT &kp RET &kp HOME &kp DEL
+                &lt 3 BSPC &kp RSHFT &kp RET  &kp HOME &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -74,7 +74,7 @@
 
         layer_1 {
             bindings = <
-                &kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &mmv MOVE_UP &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
+                &kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &mmv MOVE_UP &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp KP_NUM
                 &trans    &kp GRAVE       &mkp LCLK      &mkp MCLK       &mkp RCLK        &mkp MB4
                 &mmv MOVE_DOWN
                 &kp PG_UP &kp PG_DN       &kp HOME       &kp END         &kp MINUS        &kp EQUAL
@@ -108,18 +108,18 @@
         layer_3 {
             bindings = <
                 &kp PG_UP &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &trans &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-                &kp PG_DN              &kp QMARK &kp LBRC  &kp LBKT  &kp LPAR  &kp PRCNT
+                &kp PG_DN              &kp QMARK &kp LT    &kp LBKT  &kp LPAR  &kp LBRC
                 &trans
-                &none                  &kp RPAR  &kp RBKT  &kp RBRC  &kp AT    &kp F12
-                &ht_esc_ctrl LCTRL ESC &kp CARET &kp UNDER &kp MINUS &kp COLON &kp EXCL
+                &kp RBRC               &kp RPAR  &kp RBKT  &kp GT    &kp AT    &kp BSPC
+                &ht_esc_ctrl LCTRL ESC &kp CARET &kp UNDER &kp MINUS &kp COLON &kp SQT
                 &trans
-                &kp SQT                &kp DQT   &kp EQUAL &kp PLUS  &kp DLLR  &kp GRAVE
-                &kp HOME               &none     &kp BSLH  &kp PIPE  &kp STAR  &kp N0
+                &kp DQT                &kp PRCNT &kp FSLH  &kp EQUAL &kp DLLR  &kp GRAVE
+                &kp TILDE              &kp N0    &kp BSLH  &kp PIPE  &kp STAR  &kp EXCL
                 &trans
-                &none &kp HASH &kp AMPS &kp FSLH &kp TILDE &kp END &trans
-                &trans &trans &trans     &trans  &trans
+                &kp PLUS &kp HASH &kp AMPS &kp DOT &kp TILDE &kp F12 &trans
+                &trans &trans &trans &kp RET &trans
                 &trans
-                &kp GT &kp LT &kp KP_NUM &kp DOT &trans
+                &trans &trans &trans &trans  &trans
             >;
         };
 };
@@ -134,15 +134,6 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-    };
-    combos {
-        compatible = "zmk,combos";
-        combo_jk_squote {
-            timeout-ms = <50>;
-            key-positions = <34 35>;
-            bindings = <&kp SQT>;
-            layers = <0>;
         };
     };
 };
