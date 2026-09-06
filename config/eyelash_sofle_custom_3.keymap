@@ -63,7 +63,7 @@
                 &kp LSHFT              &kp Z &kp X &kp C &kp V    &kp B
                 &kp RIGHT_ARROW
                 &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp END &kp C_MUTE
-                &kp LCTRL  &kp LALT  &kp LALT &kp LGUI &kp SPACE
+                &kp LCTRL  &kp K_APP &kp LALT &kp LGUI &kp SPACE
                 &kp ENTER
                 &lt 3 BSPC &kp RSHFT &kp RET  &kp HOME &kp DEL
             >;
@@ -117,9 +117,9 @@
                 &kp TILDE              &kp N0    &kp BSLH  &kp PIPE  &kp STAR  &kp EXCL
                 &trans
                 &kp PLUS &kp HASH &kp AMPS &kp DOT &kp TILDE &kp F12 &trans
-                &trans &trans &trans &kp BSPC &trans
+                &trans &trans &trans &kp RET &trans
                 &trans
-                &trans &trans &trans &trans   &trans
+                &trans &trans &trans &trans  &trans
             >;
         };
 };
