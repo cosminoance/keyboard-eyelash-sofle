@@ -1,25 +1,21 @@
-# This file generates the GitHub Actions matrix.
-# For simple board + shield combinations, add them to the top level board and
-# shield arrays, for more control, add individual board + shield combinations
-# to the `include` property. You can also use the `cmake-args` property to
-# pass flags to the build command, `snippet` to add a Zephyr snippet, and
-# `artifact-name` to assign a name to distinguish build outputs from each other:
+# The build list for the `eyelash_sofle` variant in this folder.
+# Written by VileMK - read-only against your config repo.
 #
-# board: [ "nice_nano" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano
-#     shield: reviung41
-#   - board: nice_nano
-#     shield: corne_left
-#     snippet: studio-rpc-usb-uart
-#     cmake-args: -DCONFIG_ZMK_STUDIO=y
-#     artifact-name: corne_left_with_studio
+# To use it: copy
+#     eyelash_sofle_custom_3.keymap
+# into the config repo's `config/`, and this file over the repo's own
+# `build.yaml`. Every entry names the keymap explicitly, so ZMK builds
+# this one rather than whatever `config/<board>.keymap` happens to hold.
 #
+# Entries taken from the repo's own build.yaml,
+# with the KEYMAP_FILE changed,
+# plus the flags for the feature-gated behaviors the keymap
+# binds - a bound behavior only works when its feature is
+# compiled in.
 ---
 include:
   - board: eyelash_sofle_left
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap"
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y -DCONFIG_ZMK_STUDIO=y
   - board: eyelash_sofle_right
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap"
+    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y
