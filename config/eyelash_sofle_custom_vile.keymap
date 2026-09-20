@@ -63,9 +63,9 @@
                 &kp LSHFT              &kp Z &kp X &kp C &kp V    &kp B
                 &kp RIGHT_ARROW
                 &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp END &kp C_MUTE
-                &kp LALT   &kp K_APP &kp LGUI &vd_enter_hshift_dtesc &kp SPACE
+                &kp LALT   &kp K_APP &kp LGUI &vd_enter_hshft_dtesc_th_enu &kp SPACE
                 &kp ENTER
-                &lt 3 BSPC &kp RSHFT &kp RET  &kp HOME               &kp DEL
+                &lt 3 BSPC &kp RSHFT &kp RET  &kp HOME                     &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -136,25 +136,25 @@
 // BEGIN vilemk custom - generated, edits here are overwritten
 / {
     behaviors {
-        ht_enter_hshift_dtesc_1: ht_enter_hshift_dtesc_1 {
+        ht_enter_hshft_dtesc_th_enu_1: ht_enter_hshft_dtesc_th_enu_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        ht_enter_hshift_dtesc_2: ht_enter_hshift_dtesc_2 {
+        ht_enter_hshft_dtesc_th_enu_2: ht_enter_hshft_dtesc_th_enu_2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-        vd_enter_hshift_dtesc: vd_enter_hshift_dtesc {
+        vd_enter_hshft_dtesc_th_enu: vd_enter_hshft_dtesc_th_enu {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&ht_enter_hshift_dtesc_1 DQT RET>, <&ht_enter_hshift_dtesc_2 K_APP ESC>;
+            bindings = <&ht_enter_hshft_dtesc_th_enu_1 LSHFT RET>, <&ht_enter_hshft_dtesc_th_enu_2 K_APP ESC>;
         };
         ht_esc_ctrl: ht_esc_ctrl {
             compatible = "zmk,behavior-hold-tap";
