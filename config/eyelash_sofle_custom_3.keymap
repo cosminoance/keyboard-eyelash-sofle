@@ -63,9 +63,9 @@
                 &kp LSHFT              &kp Z &kp X &kp C &kp V    &kp B
                 &kp RIGHT_ARROW
                 &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp END &kp C_MUTE
-                &kp LALT   &kp K_APP &kp RET &kp LGUI &kp SPACE
+                &kp LALT   &kp K_APP &kp LGUI &vd_enter_hshift_dtesc &kp SPACE
                 &kp ENTER
-                &lt 3 BSPC &kp RSHFT &kp RET &kp HOME &kp DEL
+                &lt 3 BSPC &kp RSHFT &kp RET  &kp HOME               &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -116,18 +116,18 @@
         layer_3 {
             bindings = <
                 &kp PG_UP &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &trans &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-                &kp PG_DN              &kp QMARK &kp LT    &kp LBKT  &kp LPAR  &kp LBRC
+                &kp PG_DN &kp QMARK &kp LT    &kp LBKT  &kp LPAR  &kp LBRC
                 &trans
-                &kp RBRC               &kp RPAR  &kp RBKT  &kp GT    &kp AT    &trans
-                &ht_esc_ctrl LCTRL ESC &kp CARET &kp UNDER &kp MINUS &kp COLON &kp SQT
+                &kp RBRC  &kp RPAR  &kp RBKT  &kp GT    &kp AT    &trans
+                &trans    &kp CARET &kp UNDER &kp MINUS &kp COLON &kp SQT
                 &trans
-                &kp DQT                &kp PRCNT &kp FSLH  &kp EQUAL &kp DLLR  &kp GRAVE
-                &kp TILDE              &kp N0    &kp BSLH  &kp PIPE  &kp STAR  &kp EXCL
+                &kp DQT   &kp PRCNT &kp FSLH  &kp EQUAL &kp DLLR  &kp GRAVE
+                &kp TILDE &kp N0    &kp BSLH  &kp PIPE  &kp STAR  &kp EXCL
                 &trans
                 &kp PLUS &kp HASH &kp AMPS &kp DOT &kp TILDE &kp F12 &trans
-                &trans &trans &trans &kp RET &trans
+                &trans &trans &trans &trans &trans
                 &trans
-                &trans &trans &trans &trans  &trans
+                &trans &trans &trans &trans &trans
             >;
         };
 };
@@ -136,6 +136,26 @@
 // BEGIN vilemk custom - generated, edits here are overwritten
 / {
     behaviors {
+        ht_enter_hshift_dtesc_1: ht_enter_hshift_dtesc_1 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        ht_enter_hshift_dtesc_2: ht_enter_hshift_dtesc_2 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+        vd_enter_hshift_dtesc: vd_enter_hshift_dtesc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ht_enter_hshift_dtesc_1 DQT RET>, <&ht_enter_hshift_dtesc_2 K_APP ESC>;
+        };
         ht_esc_ctrl: ht_esc_ctrl {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
