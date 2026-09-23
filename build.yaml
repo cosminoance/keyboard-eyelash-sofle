@@ -2,7 +2,7 @@
 # Written by VileMK - read-only against your config repo.
 #
 # To use it: copy
-#     eyelash_sofle_custom_vile.keymap
+#     eyelash_sofle_custom_3.keymap
 # into the config repo's `config/`, and this file over the repo's own
 # `build.yaml`. Every entry names the keymap explicitly, so ZMK builds
 # this one rather than whatever `config/<board>.keymap` happens to hold.
@@ -16,6 +16,6 @@
 include:
   - board: eyelash_sofle_left
     snippet: studio-rpc-usb-uart
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_vile.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y -DCONFIG_ZMK_STUDIO=y
   - board: eyelash_sofle_right
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_vile.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y
+    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y

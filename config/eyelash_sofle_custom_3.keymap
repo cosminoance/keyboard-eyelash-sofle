@@ -56,16 +56,16 @@
                 &kp MINUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp UP_ARROW &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp EQUAL
                 &lt 1 TAB              &kp Q &kp W &kp E &kp R    &kp T
                 &kp DOWN_ARROW
-                &kp Y                  &kp U &kp I &kp O &kp P    &lt 2 BSPC
+                &kp Y                  &kp U &kp I &kp O &kp P    &lt 2 DEL
                 &ht_esc_ctrl LCTRL ESC &kp A &kp S &kp D &kp F    &kp G
                 &kp LEFT_ARROW
                 &kp H                  &kp J &kp K &kp L &kp SEMI &kp SQT
                 &kp LSHFT              &kp Z &kp X &kp C &kp V    &kp B
                 &kp RIGHT_ARROW
-                &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp END &kp C_MUTE
+                &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp UP &kp C_MUTE
                 &kp LALT   &kp K_APP &kp LGUI &vd_enter_hshift_dtesc &kp SPACE
                 &kp ENTER
-                &lt 3 BSPC &kp RSHFT &kp RET  &kp HOME               &kp DEL
+                &lt 3 BSPC &kp RSHFT &kp RET  &kp HOME               &kp END
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -134,6 +134,7 @@
 };
 
 // BEGIN vilemk custom - generated, edits here are overwritten
+// vilemk-records: {"combo":[],"layer":[],"macro":[],"viledance":[{"double_tap":"&kp ESC","flavor":"tap-preferred","hold":"&kp DQT","name":"enter_hshift_dtesc","tap":"&kp RET","tap_hold":"&kp K_APP","tapping_term_ms":200},{"double_tap":"","flavor":"tap-preferred","hold":"&kp LCTRL","name":"esc_ctrl","tap":"&kp ESC","tap_hold":"","tapping_term_ms":200}]}
 / {
     behaviors {
         ht_enter_hshift_dtesc_1: ht_enter_hshift_dtesc_1 {
