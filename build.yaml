@@ -16,6 +16,17 @@
 include:
   - board: eyelash_sofle_left
     snippet: studio-rpc-usb-uart
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_DISPLAY=n -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap"
   - board: eyelash_sofle_right
-    cmake-args: -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap" -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y
+    cmake-args: -DCONFIG_ZMK_RGB_UNDERGLOW=y -DCONFIG_WS2812_STRIP=y -DCONFIG_ZMK_PM_SOFT_OFF=y -DCONFIG_ZMK_POINTING=y -DKEYMAP_FILE="${GITHUB_WORKSPACE}/config/eyelash_sofle_custom_3.keymap"
+  # Wipes the keymap stored in the settings partition. ZMK Studio
+  # writes the keys you edit there, and those override the compiled
+  # keymap on every boot - for those positions only, which is why a
+  # keyboard can look mostly right and have two dead keys. Flashing
+  # normal firmware does not clear them and neither does the reset
+  # button. Flash these to every half, then the firmware above, then
+  # re-pair: the reset drops Bluetooth bonds too.
+  - board: eyelash_sofle_left
+    shield: settings_reset
+  - board: eyelash_sofle_right
+    shield: settings_reset
